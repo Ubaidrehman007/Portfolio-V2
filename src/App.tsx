@@ -1,8 +1,12 @@
+import { Container } from "@/components/shared/Container";
+
 function App() {
   return (
-    <>
-      <h1>Hello, I'm Ubaid 👋</h1>
-    </>
+    <main className="min-h-screen bg-[#030712] text-white">
+      <Container>
+        <h1 className="py-20  text-5xl font-bold">Welcome to Project ORBIT 🚀</h1>
+      </Container>
+    </main>
   );
 }
 
