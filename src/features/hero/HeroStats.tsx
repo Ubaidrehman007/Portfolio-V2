@@ -7,14 +7,14 @@ export function HeroStats() {
         mt-12
         flex
         flex-wrap
-        gap-4
         justify-center
+        gap-4
         lg:justify-start
       "
     >
-      {stats.map((tech) => (
+      {stats.map((item) => (
         <div
-          key={tech}
+          key={item}
           className="
             rounded-full
             border
@@ -25,13 +25,9 @@ export function HeroStats() {
             text-sm
             font-medium
             text-slate-300
-            transition-all
-            duration-300
-            hover:border-blue-500/30
-            hover:bg-blue-500/10
           "
         >
-          ✓ {tech}
+          ✓ {item}
         </div>
       ))}
     </div>

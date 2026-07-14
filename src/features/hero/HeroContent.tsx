@@ -1,9 +1,14 @@
+import { motion } from "framer-motion";
+import { containerVariants, fadeUpVariants } from "@/lib/motion";
 import { HeroButtons } from "./HeroButtons";
 import { HeroStats } from "./HeroStats";
 
 export function HeroContent() {
   return (
-    <div
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
       className="
         flex
         flex-col
@@ -14,7 +19,8 @@ export function HeroContent() {
     >
       {/* Badge */}
 
-      <div
+      <motion.div
+        variants={fadeUpVariants}
         className="
           inline-flex
           w-fit
@@ -33,11 +39,12 @@ export function HeroContent() {
         "
       >
         ● Available for Opportunities
-      </div>
+      </motion.div>
 
       {/* Heading */}
 
-      <h1
+      <motion.h1
+        variants={fadeUpVariants}
         className="
           mt-8
           font-heading
@@ -62,11 +69,12 @@ export function HeroContent() {
         >
           Rehman
         </span>
-      </h1>
+      </motion.h1>
 
       {/* Title */}
 
-      <h2
+      <motion.h2
+        variants={fadeUpVariants}
         className="
           mt-5
           text-2xl
@@ -76,11 +84,12 @@ export function HeroContent() {
         "
       >
         Full Stack Java Developer
-      </h2>
+      </motion.h2>
 
       {/* Description */}
 
-      <p
+      <motion.p
+        variants={fadeUpVariants}
         className="
           mt-8
           max-w-xl
@@ -91,11 +100,15 @@ export function HeroContent() {
       >
         I build scalable backend systems using Java, Spring Boot, React and modern web technologies,
         while creating fast, responsive and user-focused digital experiences.
-      </p>
+      </motion.p>
 
-      <HeroButtons />
+      <motion.div variants={fadeUpVariants}>
+        <HeroButtons />
+      </motion.div>
 
-      <HeroStats />
-    </div>
+      <motion.div variants={fadeUpVariants}>
+        <HeroStats />
+      </motion.div>
+    </motion.div>
   );
 }

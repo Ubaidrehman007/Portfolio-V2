@@ -2,108 +2,109 @@ import profile from "@/assets/images/profile.png";
 
 export function HeroImage() {
   return (
-    <div className="relative hidden items-center justify-center lg:flex">
-      {/* Background Glow */}
+    <div
+      className="
+        relative
+        order-first
+        flex
+        justify-center
+        lg:order-last
+      "
+    >
+      {/* Glow */}
 
       <div
         className="
           absolute
-          h-[520px]
-          w-[520px]
+          h-[320px]
+          w-[320px]
           rounded-full
-          bg-blue-500/15
-          blur-[120px]
+          bg-blue-500/20
+          blur-[80px]
+          sm:h-[420px]
+          sm:w-[420px]
+          lg:h-[520px]
+          lg:w-[520px]
         "
       />
 
-      {/* Main Card */}
+      {/* Card */}
 
       <div
         className="
           relative
           overflow-hidden
-          rounded-[40px]
+          rounded-[32px]
           border
           border-white/10
           bg-white/5
-          p-5
+          p-3
           backdrop-blur-xl
           shadow-[0_20px_80px_rgba(59,130,246,.20)]
         "
       >
-        {/* Gradient Border */}
-
-        <div
-          className="
-            absolute
-            inset-0
-            rounded-[40px]
-            bg-gradient-to-br
-            from-blue-500/20
-            via-transparent
-            to-cyan-500/20
-            pointer-events-none
-          "
-        />
-
-        {/* Image */}
-
         <img
           src={profile}
           alt="Ubaid Rehman"
           className="
-            relative
-            z-10
-            h-[620px]
-            w-[430px]
-            rounded-[28px]
+            h-[320px]
+            w-[240px]
+            rounded-[24px]
             object-cover
+
+            sm:h-[420px]
+            sm:w-[310px]
+
+            lg:h-[620px]
+            lg:w-[430px]
           "
         />
       </div>
 
-      {/* Floating Badge */}
+      {/* Badge */}
 
       <div
         className="
           absolute
-          left-[-20px]
-          top-12
-          rounded-2xl
+          -left-2
+          top-8
+          rounded-xl
           border
           border-white/10
           bg-slate-900/80
-          px-5
-          py-3
+          px-4
+          py-2
+          text-sm
+          text-white
           backdrop-blur-xl
-          shadow-xl
+
+          lg:-left-8
         "
       >
-        <p className="text-xs uppercase tracking-wider text-slate-400">Experience</p>
-
-        <h3 className="mt-1 text-lg font-bold text-white">Java Developer</h3>
+        ☕ Java Developer
       </div>
 
-      {/* Floating Badge */}
+      {/* Badge */}
 
       <div
         className="
           absolute
-          bottom-14
-          right-[-25px]
-          rounded-2xl
+          -right-2
+          bottom-10
+          rounded-xl
           border
           border-white/10
           bg-slate-900/80
-          px-5
-          py-3
+          px-4
+          py-2
+          text-sm
+          text-white
           backdrop-blur-xl
-          shadow-xl
+
+          lg:-right-8
         "
       >
-        <p className="text-xs uppercase tracking-wider text-slate-400">Projects</p>
-
-        <h3 className="mt-1 text-lg font-bold text-white">10+</h3>
+        🚀 10+ Projects
       </div>
     </div>
   );
