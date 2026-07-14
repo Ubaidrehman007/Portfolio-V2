@@ -24,9 +24,24 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: ["bg-blue-600", "text-white", "hover:bg-blue-700", "shadow-lg"],
+        primary: [
+          "bg-blue-600",
+          "text-white",
+          "shadow-lg",
+          "hover:bg-blue-500",
+          "hover:shadow-[0_0_35px_rgba(59,130,246,.45)]",
+          "hover:-translate-y-1",
+        ],
 
-        secondary: ["border", "border-white/10", "bg-white/5", "text-white", "hover:bg-white/10"],
+        secondary: [
+          "border",
+          "border-white/10",
+          "bg-white/5",
+          "text-white",
+          "hover:bg-white/10",
+          "hover:border-blue-500/40",
+          "hover:-translate-y-1",
+        ],
 
         ghost: ["bg-transparent", "text-slate-300", "hover:bg-white/5"],
       },
