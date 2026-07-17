@@ -1,8 +1,18 @@
 import profile from "@/assets/images/profile.png";
+import { motion } from "framer-motion";
+
+import { heroImageVariants, floatingAnimation, glowAnimation } from "@/lib/motion";
+
+import { useParallax } from "@/hooks";
 
 export function HeroImage() {
+  const { x, y } = useParallax(25);
+
   return (
-    <div
+    <motion.div
+      variants={heroImageVariants}
+      initial="hidden"
+      animate="visible"
       className="
         relative
         order-first
@@ -10,10 +20,17 @@ export function HeroImage() {
         justify-center
         lg:order-last
       "
+      style={{
+        transform: `translate(${x}px, ${y}px)`,
+      }}
     >
       {/* Glow */}
 
-      <div
+      <motion.div
+        animate={glowAnimation}
+        style={{
+          transform: `translate(${x * 0.5}px, ${y * 0.5}px)`,
+        }}
         className="
           absolute
           h-[320px]
@@ -21,16 +38,19 @@ export function HeroImage() {
           rounded-full
           bg-blue-500/20
           blur-[80px]
+
           sm:h-[420px]
           sm:w-[420px]
+
           lg:h-[520px]
           lg:w-[520px]
         "
       />
 
-      {/* Card */}
+      {/* Image Card */}
 
-      <div
+      <motion.div
+        animate={floatingAnimation}
         className="
           relative
           overflow-hidden
@@ -59,11 +79,19 @@ export function HeroImage() {
             lg:w-[430px]
           "
         />
-      </div>
+      </motion.div>
 
-      {/* Badge */}
+      {/* Left Badge */}
 
-      <div
+      <motion.div
+        animate={{
+          y: [0, -6, 0],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
         className="
           absolute
           -left-2
@@ -82,11 +110,19 @@ export function HeroImage() {
         "
       >
         ☕ Java Developer
-      </div>
+      </motion.div>
 
-      {/* Badge */}
+      {/* Right Badge */}
 
-      <div
+      <motion.div
+        animate={{
+          y: [0, -6, 0],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
         className="
           absolute
           -right-2
@@ -105,7 +141,7 @@ export function HeroImage() {
         "
       >
         🚀 10+ Projects
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
